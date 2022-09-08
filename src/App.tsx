@@ -1,7 +1,10 @@
 import React from 'react';
+import { Calendar } from './components/Сalendar';
 
 export const App: React.FC = () => {
   return (
-    <h1>Hello, world!</h1>
-  )
-}
+    <div className="App">
+      <Calendar />
+    </div>
+  );
+};
