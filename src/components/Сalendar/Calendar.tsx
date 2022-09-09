@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CalendarDay } from '../CalendarDay';
 import  './Calendar.scss';
+import classNames from 'classnames';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
 
@@ -12,6 +13,7 @@ export const Calendar:React.FC<Props> = React.memo(({ currentMonth }) => {
   const [year, month] = currentMonth;
   const [days, setDays] = useState(new Date(year, month, 0).getDate());
   const [startDay, setStartDay] = useState('');
+  const currentDay = new Date().toLocaleDateString().split('.');
 
   const configureDay = (day: number): number => {
     const configuratedDay = new Date(year, month - 1, day);
@@ -31,11 +33,18 @@ export const Calendar:React.FC<Props> = React.memo(({ currentMonth }) => {
     <div className={`calendar calendar__start-day--${startDay}`}>
       {Array.from(Array(days + 1).keys()).slice(1).map(day => (
         <div
-          className="calendar__day"
+          className={classNames(
+            'calendar__day',
+            {
+              'calendar__day--current': Number(currentDay[0]) === day
+                && Number(currentDay[1]) === month
+                && Number(currentDay[2]) === year
+            }
+          )}
           key={`${day}`}
         >
           <CalendarDay
-            currentDay={daysOfWeek[configureDay(day)]}
+            dayNumber={daysOfWeek[configureDay(day)]}
             dayOfMonth={day}
           />
         </div>

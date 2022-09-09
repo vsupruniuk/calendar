@@ -2,16 +2,16 @@ import React from 'react';
 import './CalendarDay.scss';
 
 type Props = {
-  currentDay: string,
+  dayNumber: string,
   dayOfMonth: number
 }
 
 export const CalendarDay: React.FC<Props> = React.memo(({
-  currentDay, dayOfMonth
+  dayNumber, dayOfMonth
 }) => {
   return (
     <span className="calendar-day__day-info">
-      {`${dayOfMonth} ${currentDay}`}
+      {`${dayOfMonth} ${dayNumber}`}
     </span>
   );
 });

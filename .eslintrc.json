@@ -29,6 +29,7 @@
     "camelcase": "error",
     "spaced-comment": "error",
     "object-curly-spacing": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-double"],
     "quotes": ["error", "single"],
     "no-duplicate-imports": "error",
     "no-use-before-define": "off",

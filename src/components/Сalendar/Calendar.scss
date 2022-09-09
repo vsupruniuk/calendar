@@ -1,4 +1,4 @@
-$day-width: 230px;
+$day-width: 220px;
 $gap: 2px;
 $days: 'mon' 0, 'tues' 1, 'wed' 2, 'thurs' 3, 'fri' 4, 'sat' 5, 'sun' 6;
 
@@ -16,11 +16,15 @@ $days: 'mon' 0, 'tues' 1, 'wed' 2, 'thurs' 3, 'fri' 4, 'sat' 5, 'sun' 6;
   }
 
   &__day {
-    height: 160px;
+    height: 140px;
     padding: 0 3px;
     width: $day-width;
     background-color: rgba(242, 242, 242, 0.69);
     border: 1px solid rgb(116, 116, 116);
+
+    &--current {
+      background-color: rgba(179, 241, 163, 0.55);
+    }
   }
 }
 
