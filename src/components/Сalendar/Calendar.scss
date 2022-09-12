@@ -1,0 +1,47 @@
+$day-width: 13.5vw;
+$gap: 0.2vw;
+$days: 'mon' 0, 'tues' 1, 'wed' 2, 'thurs' 3, 'fri' 4, 'sat' 5, 'sun' 6;
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: $day-width * 7 + $gap * 6;
+  gap: $gap;
+
+  @each $name, $number in $days {
+    &__start-day--#{$name}>.calendar__day:first-child {
+      margin-left: ($day-width + $gap) * $number;
+    }
+  }
+
+  &__day {
+    height: 140px;
+    padding: 0 5px;
+    width: $day-width;
+    background-color: rgba(242, 242, 242, 0.69);
+    border: 1px solid rgb(116, 116, 116);
+    cursor: pointer;
+    overflow-y: scroll;
+
+    transition: transform 0.2s, background-color 0.2s;
+
+    @media (min-width: 1280px) {
+      $day-width: 180px
+    }
+
+    &:hover {
+      transform: scale(0.98);
+      background-color: rgba(202, 202, 202, 0.69);
+    }
+
+    &--current {
+      background-color: rgba(179, 241, 163, 0.55);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+

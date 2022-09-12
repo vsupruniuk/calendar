@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Calendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Here is the [DEMO LINK](https://vsupruniuk.github.io/calendar/)
 
-## Available Scripts
+### To run project locally:
+- Fork a repo
+- Clone a project
+- Open project, then open a terminal and type a `npm start`
+- Open `http://localhost:3000/` in your browser
 
-In the project directory, you can run:
+### Technologies used:
+- React 18.2.0
+- TypeScript 4.8.2
+- SASS 7.0.1
+- React-router 6.3.0
+- HTML5
+- CSS3
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Application - Calendar of events.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### New user of the application:
+- ### Go to the application page and see a page that consists of:
+  - Form opening button.
+  - Filter by date. By default, the current month is selected.
+  - Calendar grid of the selected month in the filter. It consists of days (cells).
+    The cell includes:
+    - Number of the day of the month (1, 2, 3)
+    - Weekday
+    - List of events
+    - The cell corresponding to the current day is probably the department.
+- ### Filter by date
+  - buttons "<" and ">" change the month cyclically
+  - the calendar button opens the date picker with the ability to select the year and month
+- ### Creating an event
+  - click on the event creation button
+  - an unfilled form will open. The form consists of 4 fields:
+    - Title (required)
+    - Description
+    - Date (required)
+    - Time
+    - The "Save" button saves and closes the form
+- ### Editing/deleting events
+  - Clicking the event opens the completed form in editing mode. It is on the form created at/ updated at
+  - the "save" button updates the event and closes the form
+  - the "delete" button deletes the event and closes the form
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Requirements:
+- Do not use ready-made calendars.
+- The application saves the state of the filters after reloading the page
+- The application uses localstorage as data storage. Provide a replacement storage implementations such as REST API (do not implement).
+- The application may visually differ from the attached references
