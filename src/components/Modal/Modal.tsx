@@ -105,13 +105,19 @@ export const Modal: React.FC<Props> = React.memo(({
           <form className="modal__form" onSubmit={onFormSubmit}>
             <div className="modal__header">
               <div className="modal__title-container">
-                <h2 className="modal__title">
-                  Add a new event
-                </h2>
+                {eventInfo.createdAt ? (
+                  <h2 className="modal__title">
+                    Edit the event
+                  </h2>
+                  ) : (
+                  <h2 className="modal__title">
+                    Add a new event
+                  </h2>
+                )}
 
                 {eventInfo.createdAt && (
                   <div className="modal__creation-info">
-                    Crated at {eventInfo.createdAt}
+                    Created at {eventInfo.createdAt}
                   </div>
                 )}
 
