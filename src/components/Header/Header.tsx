@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './Header.scss';
+import { Event } from '../../types/Event';
 
 const monthNames = [
   'January',
@@ -20,24 +21,34 @@ type Props = {
   currentMonth: [number, number]
   changeDate: (action: string) => void
   setUserDate: (date: string) => void
+  openModal: (value: boolean) => void
+  prepareData: (event: Event) => void
+  defaultEvent: Event
 }
 
 export const Header: React.FC<Props> = React.memo(({
-  currentMonth, changeDate, setUserDate
+  currentMonth, changeDate, setUserDate, openModal, prepareData, defaultEvent
 }) => {
   const [year, month] = currentMonth;
 
-  const transformDate = (): string => {
+  const transformDate = useCallback((): string => {
     if (month < 10) {
       return `${year}-0${month}`;
     } else {
       return `${year}-${month}`;
     }
-  };
+  }, [year, month]);
 
   return (
     <div className="header">
-      <button className="header__add-todo" type="button"></button>
+      <button
+        className="header__add-todo"
+        type="button"
+        onClick={() => {
+          prepareData(defaultEvent);
+          openModal(true);
+        }}
+      ></button>
 
       <div className="header__date-control">
         <div className="header__buttons">

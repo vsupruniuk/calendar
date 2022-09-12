@@ -96,8 +96,32 @@
   }
 
   &__date-picker {
+    padding: 5px;
     height: 30px;
     line-height: 30px;
+
+    border: 1px solid #626262;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+
+    &:focus {
+      border-color: #86b7fe;
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      margin: 0 auto;
+    }
   }
 }
 

@@ -1,5 +1,21 @@
 .calendar-day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   &__day-info {
     font-size: 18px;
+  }
+
+  &__event {
+    padding: 0 3px;
+    background-color: #60a8ca;
+    overflow-x: hidden;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #fff;
+    }
   }
 }
